@@ -61,7 +61,7 @@ $color-white-button-focus: $blue-30; // Focus ring for white buttons
 }
 
 // Flat Buttons
-@mixin button--flat($color-default, $color-hover, $color-focus) {
+@mixin button--flat($color-default, $color-hover, $color-focus, $color-hover-bkgd) {
   color: $color-default;
 
   &,
@@ -79,6 +79,7 @@ $color-white-button-focus: $blue-30; // Focus ring for white buttons
 
   &:hover,
   &.button--active {
+    background: $color-hover-bkgd;
     color: $color-hover;
   }
 
@@ -88,6 +89,7 @@ $color-white-button-focus: $blue-30; // Focus ring for white buttons
 
   &:disabled {
     color: $coolgrey-30;
+    background: transparent;
   }
 }
 
@@ -181,7 +183,7 @@ $color-white-button-focus: $blue-30; // Focus ring for white buttons
 // Flat
 
 .button--flat {
-  @include button--flat($blue, $blue-80, $blue-20);
+  @include button--flat($blue, $blue-70, $blue-20, $blue-20);
   background: transparent;
   border-color: transparent;
   padding-left: 0.5rem;
@@ -189,13 +191,13 @@ $color-white-button-focus: $blue-30; // Focus ring for white buttons
 }
 
 .button--flat.button--success {
-  @include button--flat($green, $green-80, $green-20);
+  @include button--flat($green, $green-80, $green-20, $green-20);
 }
 
 .button--flat.button--danger {
-  @include button--flat($red, $red-80, $red-20);
+  @include button--flat($red, $red-80, $red-20, $red-20);
 }
 
 .button--flat.button--white {
-  @include button--flat($white, rgba($white, 0.8), $color-white-button-focus);
+  @include button--flat($white, rgba($white, 0.8), $color-white-button-focus, rgba($white, 0.35));
 }
